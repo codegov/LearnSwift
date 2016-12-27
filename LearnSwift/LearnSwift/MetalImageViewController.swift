@@ -32,7 +32,7 @@ class MetalImageViewController: UIViewController
             queue.async {
                 self.applyFilter()
                 
-                let finalResult = self.imageFromTexture(texture: self.outTexture)
+                let finalResult = self.imageFromTexture(texture:self.outTexture)
                 
                 DispatchQueue.main.async {
                     self.imageView.image = finalResult
@@ -67,7 +67,7 @@ class MetalImageViewController: UIViewController
     
     func setUpMetal()
     {
-        if let kernelFunction = defaultLibrary.makeFunction(name: "pixelate") {
+        if let kernelFunction = defaultLibrary.makeFunction(name:"pixelate") {
             do {
                 pipelineState = try device.makeComputePipelineState(function: kernelFunction)
             }
@@ -90,7 +90,7 @@ class MetalImageViewController: UIViewController
         
         view.backgroundColor = UIColor.white;
         
-        imageView = UIImageView(frame:CGRect(origin:CGPoint(x:0, y:0), size:CGSize(width: 300, height: 300)))
+        imageView = UIImageView(frame:CGRect(origin:CGPoint(x:0, y:0), size:CGSize(width:300, height:300)))
         imageView.center = view.center
         imageView.layer.borderColor = UIColor.white.cgColor
         imageView.layer.borderWidth = 5
@@ -182,14 +182,14 @@ class MetalImageViewController: UIViewController
         let region = MTLRegionMake2D(0, 0, texture.width, texture.height)
         texture.getBytes(&src, bytesPerRow: bytesPerRow, from: region, mipmapLevel: 0)
         
-        let bitmapInfo = CGBitmapInfo(rawValue: (CGBitmapInfo.byteOrder32Big.rawValue | CGImageAlphaInfo.premultipliedLast.rawValue))
+        let bitmapInfo = CGBitmapInfo(rawValue:(CGBitmapInfo.byteOrder32Big.rawValue | CGImageAlphaInfo.premultipliedLast.rawValue))
         
         let grayColorSpace = CGColorSpaceCreateDeviceRGB()
         let bitsPerComponent = 8
-        let context = CGContext(data: &src, width: texture.width, height: texture.height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: grayColorSpace, bitmapInfo: bitmapInfo.rawValue);
+        let context = CGContext(data:&src, width:texture.width, height:texture.height, bitsPerComponent:bitsPerComponent, bytesPerRow: bytesPerRow, space:grayColorSpace, bitmapInfo:bitmapInfo.rawValue);
         
         let dstImageFilter = context!.makeImage();
         
-        return UIImage(cgImage: dstImageFilter!, scale: 0.0, orientation: UIImageOrientation.downMirrored)
+        return UIImage(cgImage:dstImageFilter!, scale:0.0, orientation:UIImageOrientation.downMirrored)
     }
 }

@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.view.addSubview(tableView);
         
         dataArray.add(["title": "高斯模糊", "class": "GaussianBlurViewController"]);
-        dataArray.add(["title": "马赛克", "class": "MetalImageViewController"])
+        dataArray.add(["title": "马赛克",  "class": "MetalImageViewController"])
         
         tableView.reloadData();
     }
