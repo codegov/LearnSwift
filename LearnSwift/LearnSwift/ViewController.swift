@@ -50,28 +50,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell;
     }
     
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
         tableView.deselectRow(at: indexPath, animated: true);
         
-        let dic: NSDictionary = dataArray.object(at: indexPath.row) as! NSDictionary;
-
-        guard let NameSpace = Bundle.main.infoDictionary!["CFBundleExecutable"]as? String else {
-            NSLog("无法获取到命名空间  后续代码不用执行")
-            return
-        }
-        
+        let dic: NSDictionary = dataArray.object(at: indexPath.row) as! NSDictionary
         let className = dic.object(forKey: "class") as! String
-        guard let vcClass = NSClassFromString(NameSpace+"."+className) else {
-            NSLog("无法获取到该类 后续代码不用执行");
-            return
-        }
-        
-        guard let vcType = vcClass as? UIViewController.Type else {
-            NSLog("无法获取到该控制器类型 后续代码不用执行");
-            return
-        }
-        let vc = vcType.init()
-        self.navigationController?.pushViewController(vc, animated: true);
+        self.openSubWithClassName(className: className)
     }
 }
 

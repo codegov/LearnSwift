@@ -17,6 +17,7 @@
 		829260B71DDF1398001714A6 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 829260B51DDF1398001714A6 /* 1.png */; };
 		829260B81DDF1398001714A6 /* AnimalImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 829260B61DDF1398001714A6 /* AnimalImage.png */; };
 		829260BC1DDF1A3C001714A6 /* Kernels.metal in Sources */ = {isa = PBXBuildFile; fileRef = 829260BB1DDF1A3C001714A6 /* Kernels.metal */; };
+		82E0C7E01ECEC35A0079DEB5 /* UIViewController+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E0C7DF1ECEC35A0079DEB5 /* UIViewController+Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		829260B51DDF1398001714A6 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		829260B61DDF1398001714A6 /* AnimalImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnimalImage.png; sourceTree = "<group>"; };
 		829260BB1DDF1A3C001714A6 /* Kernels.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Kernels.metal; sourceTree = "<group>"; };
+		82E0C7DF1ECEC35A0079DEB5 /* UIViewController+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Category.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				829260B21DDF1349001714A6 /* MetalImageViewController.swift */,
 				829260BB1DDF1A3C001714A6 /* Kernels.metal */,
 				829260B41DDF1398001714A6 /* Images */,
+				82E0C7DF1ECEC35A0079DEB5 /* UIViewController+Category.swift */,
 			);
 			path = LearnSwift;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82E0C7E01ECEC35A0079DEB5 /* UIViewController+Category.swift in Sources */,
 				829260A11DDEDE56001714A6 /* ViewController.swift in Sources */,
 				829260B11DDF12D9001714A6 /* GaussianBlurViewController.swift in Sources */,
 				829260B31DDF1349001714A6 /* MetalImageViewController.swift in Sources */,
